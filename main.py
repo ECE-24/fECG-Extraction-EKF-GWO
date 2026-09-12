@@ -1,10 +1,12 @@
 import os
 import sys
+
+# Directory-இன் சரியான முகவரியை Python Path-இல் சேர்க்கும் அமைப்பு
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(current_dir)
+
 import pandas as pd
 import numpy as np
-
-# Python Root Path Fix (This prevents 'ModuleNotFoundError: No module named src')
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from src.data_loader import load_physionet_record
 from src.preprocessing import preprocess_signal
