@@ -1,6 +1,11 @@
 import os
+import sys
 import pandas as pd
 import numpy as np
+
+# Python Root Path Fix (This prevents 'ModuleNotFoundError: No module named src')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from src.data_loader import load_physionet_record
 from src.preprocessing import preprocess_signal
 from src.ekf_model import EKF_Tracker
